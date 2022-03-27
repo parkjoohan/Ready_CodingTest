@@ -1,19 +1,21 @@
 import java.util.*;
 
 class Solution {
-    public String solution(String s) {
-        Character [] arr = new Character [s.length()];
+    public long solution(long n) {
+        long answer = 0;
+        ArrayList<Integer> list = new ArrayList<>();
         
-        for(int i=0; i<arr.length; i++) {
-            arr[i] = s.charAt(i);
+        while(n>0){
+            list.add((int)(n%10));
+            n /= 10;
         }
         
-        Arrays.sort(arr,Collections.reverseOrder());
+        Collections.sort(list);
         
-        s="";
-        for(int i=0; i<arr.length; i++) {
-            s += arr[i];
+        for(int i=0; i<list.size(); i++){
+            answer += list.get(i) * Math.pow(10, i);
         }
-        return s;
+        
+        return answer;
     }
 }
