@@ -18,3 +18,20 @@ class Solution {
         return answer;
     }
 }
+
+//class Solution {
+//    boolean solution(String s) {
+//        int cnt=0, cnt2=0;
+//        
+//        for(int i=0; i<s.length(); i++){
+//            if(s.charAt(i) == 'p' || s.charAt(i) == 'P')
+//                cnt++;
+//            else if(s.charAt(i) == 'y' || s.charAt(i) == 'Y')
+//                cnt2++;
+//        }
+//        
+//        if(cnt == cnt2) return true;
+//        else if(cnt != cnt2)    return false;
+//        else    return true;
+//    }
+//}
