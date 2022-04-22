@@ -2,8 +2,7 @@ class Solution
 {
     public int solution(int [][]board)
     {
-         int answer = 0;
-
+        int answer = 0;
         int[][] arr = new int[board.length+1][board[0].length+1];
         
         for(int i = 0 ; i < board.length ; i++) {
