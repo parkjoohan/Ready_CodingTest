@@ -9,10 +9,10 @@ class Solution {
             if(arr[i] % divisor == 0)
                 list.add(arr[i]);
 
-        if(list.isEmpty())  list.add(-1);
+        if(list.isEmpty())  
+        	list.add(-1);
         
         answer = new int[list.size()];
-        
         for(int i=0; i<list.size(); i++)
             answer[i] = list.get(i);
         
