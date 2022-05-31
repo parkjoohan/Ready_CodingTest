@@ -48,9 +48,9 @@ class Solution {
         int sum1=0, sum2=0, sum3=0, max=0;
         
         for(int i=0; i<answers.length; i++){
-            if(answers[i] == person1[i])    sum1++;
-            if(answers[i] == person2[i])    sum2++;
-            if(answers[i] == person3[i])    sum3++;
+            if(person1[i%person1.length] == answers[i]) sum1++;
+            if(person2[i%person2.length] == answers[i]) sum2++;
+            if(person3[i%person3.length] == answers[i]) sum3++;
         }
         
         max = Math.max(sum1, Math.max(sum2, sum3));
