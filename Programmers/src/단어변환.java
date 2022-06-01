@@ -1,42 +1,43 @@
 class Solution {
-    
-    static boolean[] visited;
-    static int answer = 999999;
+    static boolean[] visit;
+    static int answer = 0;
     
     public int solution(String begin, String target, String[] words) {
+        visit = new boolean[words.length];
         
-        for(int i=0; i<words.length; i++){
-            if(compare(begin, words[i]) <= 1){
-                visited = new boolean[words.length];
-                visited[i] = true;
-                dfs(1, i, target, words);
-            }
-        }
+        dfs(begin, target, words, 0);
         
-        return answer == 999999 ? 0 : answer;
+        return answer;
     }
     
-    static void dfs(int cnt, int cur, String target, String[] words){
-        if(target.equals(words[cur])){
-            answer = Math.min(cnt, answer);
+    public static void dfs(String begin, String target, String[] words, int cnt) {
+        
+        // 원하는 단어와 같아지면
+        if(begin.equals(target)){
+            answer = cnt;
             return;
         }
         
         for(int i=0; i<words.length; i++){
-            if(!visited[i] && compare(words[cur], words[i]) == 1){
-                visited[i] = true;
-                dfs(cnt+1, i, target, words);
-                visited[i] = false;
-            }
-        }
-    }
-    
-    static int compare(String s1, String s2){
-        int n=0;
-        for(int i=0; i<s1.length(); i++)
-            if(s1.charAt(i) != s2.charAt(i))
-                n++;
+            // 이미 쓴 단어는 넘어가기
+            if(visit[i])
+                continue;
             
-        return n;
+            // 단어끼리 다른 개수 찾기
+            int k=0;
+            for(int j=0; j<begin.length(); j++){
+                if(begin.charAt(j) != words[i].charAt(j))
+                    k++;
+            }
+            
+            // 다른게 1개라면 탐색
+            // 다른 단어 개수가 1개면 변환 가능한 단어이므로 단어 탐색한 것으로 표기하고 dfs 탐색 실시
+            if(k==1){
+                visit[i]=true;
+                dfs(words[i], target, words, cnt+1);
+                visit[i]=false;
+            }
+            
+        }
     }
 }
