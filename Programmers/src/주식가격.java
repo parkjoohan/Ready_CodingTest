@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public int[] solution(int[] prices) {
         int[] answer = new int[prices.length];
@@ -8,7 +6,8 @@ class Solution {
             int cnt=0;
             for(int j=i+1; j<prices.length; j++){
                 cnt++;
-                if(prices[i] > prices[j])  break;
+                if(prices[i] > prices[j])
+                    break;
             }
             answer[i] = cnt;
         }
