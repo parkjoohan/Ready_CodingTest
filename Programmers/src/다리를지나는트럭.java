@@ -2,10 +2,9 @@ import java.util.*;
 
 class Solution {
     public int solution(int bridge_length, int weight, int[] truck_weights) {
-        int answer = 0;
-        
         Queue<Integer> q = new LinkedList<>();
         int sum = 0;
+        int answer = 0; 
         
         for(int i : truck_weights){
             while(true){
@@ -24,7 +23,6 @@ class Solution {
                 
                 // 큐가 비어있지 않을 경우
                 else {
-                    
                     // 다음 트럭이 최대 무게 초과
                     if(sum+i>weight){
                         q.offer(0);
