@@ -26,6 +26,7 @@ class Solution {
                 times.put(car, times.get(car)+(time-parking.get(car)));
                 parking.remove(car);
             } 
+            
             // 파킹 안 되어 있다면 입차
             else {
                 parking.put(car, time);
