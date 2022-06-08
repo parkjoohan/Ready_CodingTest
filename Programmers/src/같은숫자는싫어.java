@@ -3,19 +3,20 @@ import java.util.*;
 public class Solution {
     public int[] solution(int []arr) {
         ArrayList<Integer> list = new ArrayList<>();
-        int exam=10;
+        int num = 10;
         
-        for(int num : arr){
-            if(exam != num)
-                list.add(num);
-            exam = num;
-        } 
+        for(int i : arr){
+            if(num != i)
+                list.add(i);
+            num = i;
+        }
         
         int[] answer = new int[list.size()];
         
-        for(int i=0; i<answer.length; i++) {
+        for(int i=0; i<answer.length; i++){
             answer[i] = list.get(i);
         }
+
         return answer;
     }
 }
