@@ -8,11 +8,9 @@ class Solution {
                 break;
             }
         }
-        
         return answer;
     }
 }
-
 //// javascript
 //function solution(n) {
 //    var answer = 0;
