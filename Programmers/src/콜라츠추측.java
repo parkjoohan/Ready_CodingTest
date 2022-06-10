@@ -1,17 +1,20 @@
 class Solution {
     public int solution(int num) {
-        long arr = num;
+        long number=num;
         int cnt=0;
         
-        while(arr!=1){
-            if(arr%2==0)
-                arr /= 2;
-            else if(arr%2!=0) 
-                arr = arr*3 +1;
-            cnt++;
-            
-            if(cnt>500)
+        while(number!=1){
+            if(number%2==0){
+                number/=2;
+                cnt++;
+            }
+            else if(number%2!=0){
+                number = number*3+1;
+                cnt++;
+            }
+            if(cnt>500){
                 return -1;
+            }
         }
         return cnt;
     }
