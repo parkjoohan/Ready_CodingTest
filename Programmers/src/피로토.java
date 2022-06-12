@@ -1,6 +1,5 @@
-import java.util.*;
-
 class Solution {
+    
     static int answer=0;
     static boolean[] visit;
     public int solution(int k, int[][] dungeons) {
@@ -11,14 +10,14 @@ class Solution {
         return answer;
     }
     
-    public void dfs(int depth, int k, int[][] dungeons){
+    public void dfs(int cnt, int k, int[][] dungeons) {
         for(int i=0; i<dungeons.length; i++){
             if(!visit[i] && dungeons[i][0]<=k){
-                visit[i] = true;
-                dfs(depth+1, k-dungeons[i][1], dungeons);
+                visit[i]=true;
+                dfs(cnt+1, k-dungeons[i][1], dungeons);
                 visit[i]=false;
             }
         }
-        answer = Math.max(answer, depth);
+        answer = Math.max(answer, cnt);
     }
 }
