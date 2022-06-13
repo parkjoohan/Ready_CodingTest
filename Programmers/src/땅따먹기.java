@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     int solution(int[][] land) {
         int answer = 0;
