@@ -3,13 +3,13 @@ class Solution {
         int answer = word.length();
         
         String str = "AEIOU";
-        int[] x = {781, 156, 31, 6, 1};
+        int[] num = {781, 156, 31, 6, 1};
         
         for(int i=0; i<word.length(); i++){
-            int idx = str.indexOf(word.charAt(i));
-            answer += x[i] * idx;
-            System.out.println(answer);
+            int index = str.indexOf(word.charAt(i));
+            answer += num[i] * index;
         }
+        
         return answer;
     }
 }
