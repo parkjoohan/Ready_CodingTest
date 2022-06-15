@@ -22,6 +22,7 @@ class Solution {
         for(int i=0; i<edge.length; i++){
             int x = edge[i][0];
             int y = edge[i][1];
+            
             connect[x][y] = true;
             connect[y][x] = true;
         }
