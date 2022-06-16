@@ -8,20 +8,27 @@ class Solution {
         
         for(int move : moves){
             for(int i=0; i<board.length; i++){
-                if(board[i][move-1] != 0){
-                    if(stack.peek() == board[i][move-1]){
+                // moves의 맞는 board의 위치에 인형이 있는 경우
+                if(board[i][move-1]!=0){
+                    // 인형을 넣는 스택의 맨 위의 인형과 board에서 뽑는 인형이 같으면
+                    if(stack.peek()==board[i][move-1]){
+                        // stack 맨위의 인형을 뽑아내고, 인형 2개가 없어지므로 answer에 +2한다
                         stack.pop();
                         answer += 2;
-                    } else {
+                    } 
+                    // 인형을 넣는 스택의 맨 위의 인형과 board에서 뽑는 인형이 같지 않다면
+                    else {
+                        // stack에 뽑은 인형을 넣는다.
                         stack.push(board[i][move-1]);
                     }
                     
-                    board[i][move-1] = 0;
+                    // 인형을 뽑은 자리에 0을 넣고 break;
+                    board[i][move-1]=0;
                     break;
                 }
             }
         }
-       
+        
         return answer;
     }
 }
