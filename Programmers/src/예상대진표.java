@@ -2,28 +2,17 @@ class Solution
 {
     public int solution(int n, int a, int b)
     {
-        int answer = 1;
-        int left = 0;
-        int right = 0;
-        
-        if(a>b){
-            left = b;
-            right = a;
-        } else {
-            left = a;
-            right = b;
-        }
-        
+        int answer = 0;
+
         while(true){
-            if(left % 2 != 0 && right-left == 1) {
-            	break;
-            }
+            a = a/2 + a%2;
+            b = b/2 + b%2;
+            answer++;
             
-            left = (left+1)/2;
-            right = (right+1)/2;
-            answer++; 
+            if(a==b)
+                break;
         }
-        
+
         return answer;
     }
 }
