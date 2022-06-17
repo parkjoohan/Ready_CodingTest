@@ -15,8 +15,9 @@ class Solution
         }
         
         while(true){
-            if(left % 2 != 0 && right-left == 1)
-                break;
+            if(left % 2 != 0 && right-left == 1) {
+            	break;
+            }
             
             left = (left+1)/2;
             right = (right+1)/2;
