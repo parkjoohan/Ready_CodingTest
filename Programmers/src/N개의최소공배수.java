@@ -8,6 +8,7 @@ class Solution {
             answer = lcm(num, arr[i]);
             num = answer;
         }
+        
         return answer;
     }
     
@@ -17,6 +18,7 @@ class Solution {
             a=b;
             b=r;
         }
+        
         return a;
     }
     
