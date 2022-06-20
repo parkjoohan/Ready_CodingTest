@@ -7,6 +7,7 @@ class Solution {
         for(long i=left; i<right+1; i++){
             list.add(Math.max(i/n, i%n) + 1);
         }
+        
         return list;
     }
 }
