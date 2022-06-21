@@ -15,7 +15,7 @@ class Solution {
             String now = words[i];
             
             // 리스트에 추가할 단어와 같은 단어가 없고, 마지막 단어의 마지막 알파벳과 추가될 단어의 첫 알파벳이 같을 때
-            if(!list.contains(now) && last.charAt(last.length()-1) == now.charAt(0))
+            if(!list.contains(now) && last.charAt(last.length()-1)==now.charAt(0))
                 list.add(now);
             // 위의 조건이 아니라면
             else {
