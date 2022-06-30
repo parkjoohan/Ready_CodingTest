@@ -6,7 +6,7 @@ class Solution {
         ArrayList<Integer> list = new ArrayList<>();
         
         while(n>0){
-            list.add((int)n%10);
+            list.add((int)(n%10));
             n/=10;
         }
         
