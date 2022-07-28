@@ -1,6 +1,5 @@
 function solution(s) {
     let answer = [];
-    
     let str = s.split("");
     
     str.forEach((item) => {
