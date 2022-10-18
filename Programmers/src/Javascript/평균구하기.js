@@ -6,3 +6,7 @@ function solution(arr) {
     
     return answer/arr.length;
 }
+
+function solution(arr) {
+    return arr.reduce((a,b) => a+b) / arr.length;
+}
