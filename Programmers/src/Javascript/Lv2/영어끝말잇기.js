@@ -1,13 +1,13 @@
 function solution(n, words) {
-    let array = [];
     
     for(let i=0; i<words.length; i++) {
-        if(i===0)   array.push(words[i]);
-        else if(!array.includes(words[i]) && words[i-1][words[i-1].length-1] === words[i][0])
-            array.push(words[i]);
-        else {
-            return [i%n+1, parseInt(i/n)+1];
-        }
+        if(i===0)   continue;
+        let prevWord = words[i-1];
+        let last = prevWord[prevWord.length-1];
+        let first = words[i][0];
+        
+        if((words.indexOf(words[i]) !== i) || (last !== first))
+            return [(i+1)%n || n, Math.ceil((i+1)/n)];
     }
     
     return [0,0];
