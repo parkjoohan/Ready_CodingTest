@@ -9,5 +9,5 @@ function solution(n) {
             num++;
     }
     
-    return answer;
+    return num;
 }
