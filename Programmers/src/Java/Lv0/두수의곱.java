@@ -1,3 +1,5 @@
+package Java.Lv0;
+
 import java.util.*;
 
 class Solution {
